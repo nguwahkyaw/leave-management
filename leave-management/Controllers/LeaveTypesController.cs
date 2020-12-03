@@ -108,7 +108,6 @@ namespace leave_management.Controllers
         {
             try
             {
-
                 if (!ModelState.IsValid)
                 {
                     return View(model);
@@ -155,9 +154,7 @@ namespace leave_management.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, LeaveTypeVM model)
-        {           
-
-
+        { 
             try
             {
                 var leaveType = _repo.FindById(id);

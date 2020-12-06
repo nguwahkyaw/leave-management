@@ -4,43 +4,55 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 
 <div class="row">
     <div class="col-md-3">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body text-center">
-                <h1 class="card-title">@Model.TotalRequests</h1>
-                <p class="card-text">@Html.DisplayNameFor(model => model.TotalRequests)</p>
+
+        <div class="info-box">
+            <span class="info-box-icon bg-info"><i class="fas fa-tachometer-alt"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">@Model.TotalRequests</span>
+                <span class="info-box-number">@Html.DisplayNameFor(model => model.TotalRequests)</span>
             </div>
+            <!-- /.info-box-content -->
+        </div>        
+    </div>
+    <div class="col-md-3">
+
+        <div class="info-box">
+            <span class="info-box-icon bg-warning"><i class="fas fa-exclamation-circle"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">@Model.PendingRequests</span>
+                <span class="info-box-number">@Html.DisplayNameFor(model => model.PendingRequests)</span>
+            </div>
+            <!-- /.info-box-content -->
+        </div>
+               
+    </div>
+    <div class="col-md-3">
+
+        <div class="info-box">
+            <span class="info-box-icon bg-success"><i class="fas fa-check-circle"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">@Model.ApprovedRequests</span>
+                <span class="info-box-number">@Html.DisplayNameFor(model => model.ApprovedRequests)</span>
+            </div>
+            <!-- /.info-box-content -->
         </div>
     </div>
     <div class="col-md-3">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body text-center">
-                <h1 class="card-title text-warning">@Model.PendingRequests</h1>
-                <p class="card-text">@Html.DisplayNameFor(model => model.PendingRequests)</p>
+
+        <div class="info-box">
+            <span class="info-box-icon bg-danger"><i class="fas fa-times-circle"></i></span>
+
+            <div class="info-box-content">
+                <span class="info-box-text">@Model.RejectRequests</span>
+                <span class="info-box-number">@Html.DisplayNameFor(model => model.RejectRequests)</span>
             </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body text-center">
-                <h1 class="card-title text-success">@Model.ApprovedRequests</h1>
-                <p class="card-text">@Html.DisplayNameFor(model => model.ApprovedRequests)</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body text-center">
-                <h1 class="card-title text-danger">@Model.RejectRequests</h1>
-                <p class="card-text">@Html.DisplayNameFor(model => model.RejectRequests)</p>
-            </div>
+            <!-- /.info-box-content -->
         </div>
     </div>
 </div>
@@ -111,7 +123,7 @@
                 <td>
 
                     <a class="btn btn-outline-primary" asp-action="Details" asp-route-id="@item.Id">
-                        <i class="fa fa-file"></i>Details
+                        <i class="fa fa-file"></i>Review
                     </a> 
 
                 </td>
